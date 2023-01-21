@@ -139,5 +139,18 @@ secondGameTitle.innerHTML = secondGameName;
 secondGameContainer.appendChild(secondGameTitle);
 
 /************************************************************************************
- * Bonus Feature: Add a search bar to filter games by name
+ * Bonus Feature: Search bar to filter games by name
  */
+
+function filterGamesByName(searchTerm) {
+    deleteChildElements(gamesContainer);
+    const filteredGames = GAMES_JSON.filter(game => {
+      return game.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    addGamesToPage(filteredGames);
+}
+
+const searchBar = document.getElementById("game-searchbar");
+searchBar.addEventListener("keyup", (event) => {
+    filterGamesByName(event.target.value);
+});
