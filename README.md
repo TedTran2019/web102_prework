@@ -23,7 +23,8 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
-[Link since the gif file size is too large for Github](https://i.imgur.com/kT4eD4w.gif)
+
+[Link since the gif file size is too large for Github to embed](https://i.imgur.com/kT4eD4w.gif)
 <img src='https://i.imgur.com/kT4eD4w.gif' title='Video Walkthrough' width=400 alt='Video Walkthrough' />
 
 GIF created with LICEcap
