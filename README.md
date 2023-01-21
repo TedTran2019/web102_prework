@@ -23,9 +23,8 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
-
-<img src='https://i.imgur.com/kT4eD4w.gif' title='Video Walkthrough' alt='Video Walkthrough' />
-
+![Video Walkthrough](https://i.imgur.com/kT4eD4w.gif)
+<!-- <img src='https://i.imgur.com/kT4eD4w.gif' title='Video Walkthrough' alt='Video Walkthrough' /> -->
 GIF created with LICEcap
 ## Notes
 
