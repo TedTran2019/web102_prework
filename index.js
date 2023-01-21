@@ -102,16 +102,17 @@ allBtn.addEventListener("click", showAllGames);
  * Skills used: template literals, ternary operator
 */
 
-// grab the description container
 const descriptionContainer = document.getElementById("description-container");
-
-// use filter or reduce to count the number of unfunded games
-
-
-// create a string that explains the number of unfunded games using the ternary operator
-
-
-// create a new DOM element containing the template string and append it to the description container
+const nbrUnfundedGames = GAMES_JSON.filter(game => {
+  return game.pledged < game.goal;
+}).length;
+const isPluralGames = nbrUnfundedGames === 1 ? "game" : "games";
+const displayStr = `A total of ${totalContributions.toLocaleString()} has been raised
+  for ${GAMES_JSON.length} games. Currently, ${nbrUnfundedGames} ${isPluralGames} remain unfunded. We need your help 
+  to fund these amazing games!`;
+const helpParagraph = document.createElement("p");
+helpParagraph.innerHTML = displayStr;
+descriptionContainer.appendChild(helpParagraph);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -125,8 +126,18 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
     return item2.pledged - item1.pledged;
 });
 
-// use destructuring and the spread operator to grab the first and second games
+const [firstGame, secondGame, ...otherGames] = sortedGames;
+const {name: firstGameName} = firstGame;
+const {name: secondGameName} = secondGame;
 
-// create a new element to hold the name of the top pledge game, then append it to the correct element
+const firstGameTitle = document.createElement("h3");
+firstGameTitle.innerHTML = firstGameName;
+firstGameContainer.appendChild(firstGameTitle);
 
-// do the same for the runner up item
+const secondGameTitle = document.createElement("h3");
+secondGameTitle.innerHTML = secondGameName;
+secondGameContainer.appendChild(secondGameTitle);
+
+/************************************************************************************
+ * Bonus Feature: Add a search bar to filter games by name
+ */
